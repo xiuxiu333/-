@@ -1,0 +1,54 @@
+<!--pages/orderStatus/orderStatus.wxml-->
+<view class='status-container'>
+  <view class='title'>
+    <text>订单状态</text>
+  </view>
+  <view class='main'>
+    <view class='line'></view>
+    <view class='item'>
+    <view class='icon' wx:if='{{status==4}}'><icon type="success" size="20" color='#f25856' /></view>
+      <view class='info'>
+        <text>订单完成</text>
+        <!-- <text class='des'>请耐心等待审核确认</text> -->
+      </view>
+      <view class='date'>{{date}}</view>
+    </view>
+    <view class='item'>
+    <view class='icon' wx:if='{{status==3}}'><icon type="success" size="20" color='#f25856' /></view>
+      <view class='info'>
+        <text>上刊制作中</text>
+        <text class='des'>请等待上刊</text>
+      </view>
+      <view class='date'>{{date}}</view>
+    </view>
+    <view class='item'>
+    <view class='icon' wx:if='{{status==2}}'><icon type="success" size="20" color='#f25856' /></view>
+      <view class='info'>
+        <text>审核通过</text>
+        <text class='des'>物料准备中，请耐心等待</text>
+      </view>
+      <view class='date'>{{date}}</view>
+    </view>
+    <view class='item'>
+    <view class='icon' wx:if='{{status==1}}'><icon type="success" size="20" color='#f25856' /></view>
+      <view class='info'>
+        <text>支付成功</text>
+        <!-- <text class='des'>请耐心等待审核确认</text> -->
+      </view>
+      <view class='date'>{{date}}</view>
+    </view>
+    <view class='item'>
+    <view class='icon' wx:if='{{status==0}}'>
+      <image src='/images/orderstatus-ed.png'></image>
+    </view>
+     <view class='icon' wx:if='{{status!=0}}'>
+    <image src='/images/orderstatus.png'></image>
+    </view>
+      <view class='info'>
+        <text>订单已经提交</text>
+        <text class='des'>请耐心等待审核确认</text>
+      </view>
+      <view class='date'>{{date}}</view>
+    </view>
+  </view>
+</view>

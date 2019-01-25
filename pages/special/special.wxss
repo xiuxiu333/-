@@ -1,0 +1,18 @@
+/* pages/special/special.wxss */
+.special{
+  width: 100%
+}
+.special .item{
+  width: 100%
+}
+.special .item image{
+  width: 100%;
+  height: 520rpx;
+  vertical-align: top;
+}
+.special .item image.last{
+  height: 410rpx;
+}
+.special .item image.lasttwo{
+  height: 576rpx;
+}

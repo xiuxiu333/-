@@ -1,0 +1,35 @@
+<!--pages/my/my.wxml-->
+<view class='my-container'>
+{{currentCity}}
+<view class='my-info'>
+<view class='heade-img'>
+    <text>头像</text>
+    <view class='header-imgs'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class='nick-name'>
+    <text>昵称</text>
+    <view class='texts'> <open-data type="userNickName"></open-data></view>
+   
+  </view>
+  <view class='gender'>
+    <text>性别</text>
+    <text class='texts'>{{gender}}</text>
+  </view>
+  <!-- <view class='my-order' bindtap='goMyOrder'>
+    <text>我的订单</text>
+    <image src='/images/my-icon.png'></image>
+  </view> -->
+</view>
+ 
+  <view class='contacts'>
+   <button open-type='contact' class='text' type='text'>联系客服</button>
+    <!-- <text>联系客服</text> -->
+    <image src='/images/my-icon.png'></image>
+  </view> 
+  <view class='help' bindtap='goInfoDetail'>
+    <text>帮助中心</text>
+    <image src='/images/my-icon.png'></image>
+  </view>
+</view>

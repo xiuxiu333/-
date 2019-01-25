@@ -1,0 +1,164 @@
+<!--pages/myOrder/myOrder.wxml-->
+<!-- 切换栏 -->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{current == 0? 'on' : ''}}" data-current="null" data-number='0' bindtap="tabSwitch">全部
+    <view class='line'></view>
+  </view>
+  <view class="swiper-tab-list {{current == 1 ? 'on' : ''}}" data-current="0" data-number='1' bindtap="tabSwitch">待付款
+    <text class='number-num' wx:if='{{pay.count!=0}}'>{{pay.count}}</text>
+    <view class='line'></view>
+  </view>
+  <view class="swiper-tab-list {{current == 2? 'on' : ''}}" data-current="1" data-number='2' bindtap="tabSwitch">
+    <text class='number-num' wx:if='{{check.count!=0}}'>{{check.count}}</text>待审核
+      <view class='line'></view>
+    </view>
+</view>
+<swiper current='{{current}}' class='swiper-container' duration='500' bindchange='tabChange'>
+  <swiper-item>
+    <scroll-view scroll-y="true" data-status='null' bindscrolltolower="onLower" >
+      <view class="orderDetails" wx:for="{{list}}" wx:key=" ">
+        <view class="orderListTitle">
+          <view class='orderLs'>
+            <text class="userName">{{item.name}}</text>
+            <text class="orderStatus" wx:if='{{item.status==-1}}'>已取消</text>
+            <text class="orderStatus" wx:if='{{item.status==-2}}'>审核未通过</text>
+            <text class="orderStatus" wx:if='{{item.status==0}}'>待付款</text>
+            <text class="orderStatus" wx:if='{{item.status==1}}'>待审核</text>
+            <text class="orderStatus" wx:if='{{item.status==2}}'>待上刊</text>
+            <text class="orderStatus" wx:if='{{item.status==3}}'>上刊中</text>
+            <text class="orderStatus" wx:if='{{item.status==4}}'>完成</text>
+          </view>
+          <view class='media-number'>
+            <text>媒体编号：{{item.media_code}}</text>
+          </view>
+        </view>
+
+        <view class="orderListDetails" data-bookid='{{item.booking_id}}' bindtap='orderList'>
+          <view class="productImg">
+            <image src="{{item.pictures[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class='listFont'>
+              <text class="productTitle"> {{item.package}}/{{item.discount_package}}</text>
+              <text style='margin-left:50rpx;'> ￥{{item.media_fee}}</text>
+            </view>
+            <view style='font-size:24rpx;color:#888;margin-left:360rpx;margin-top:14rpx;'>×{{item.days}}</view>
+            <view class='list'>
+              <text class="productPrice">制作费</text>
+              <text class='productText'>+￥{{item.fabrication_fee}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+            <view>合计：<text class='zh-text'>￥</text><text class='num-text'>{{item.all_fee}}</text></view>
+        </view>
+        <view class='btn'>
+          <view class='btnList' wx:if='{{item.status!=-1}}'>
+            <button open-type='contact' class='btns'>
+              <image src='../../images/service.png'></image>
+            </button>
+          </view>
+          <view class='btnButton'>
+            <button data-list='{{item}}' bindtap='cancel' wx:if='{{item.status==0||item.status==1}}'>取消订单</button>
+            <button bindtap='goStatus' data-list='{{item}}' style='background-color:#fff;' wx:if='{{item.status!=-1}}'>查看状态</button>
+            <button class='fukuan' data-list='{{item}}' bindtap='goBuy' wx:if='{{item.status==0}}'>付款</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true"  data-status='0' bindscrolltolower="onLower" >
+      <view class="orderDetails" wx:for="{{pay.list}}" wx:key=" ">
+        <view class="orderListTitle">
+          <view class='orderLs'>
+            <text class="userName">{{item.name}}</text>
+            <text class="orderStatus">待付款</text>
+          </view>
+          <view class='media-number'>
+            <text>媒体编号：{{item.media_code}}</text>
+          </view>
+        </view>
+
+        <view class="orderListDetails" data-bookid='{{item.booking_id}}' bindtap='orderList'>
+          <view class="productImg">
+            <image src="{{item.pictures[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class='listFont'>
+              <text class="productTitle"> {{item.package}}/{{item.discount_package}}</text>
+              <text style='margin-left:50rpx;'> ￥{{item.media_fee}}</text>
+            </view>
+            <view style='font-size:24rpx;color:#888;margin-left:360rpx;margin-top:14rpx;'>×{{item.days}}</view>
+            <view class='list'>
+              <text class="productPrice">制作费</text>
+              <text class='productText'>+￥{{item.fabrication_fee}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+            <view>合计：<text class='zh-text'>￥</text><text class='num-text'>{{item.all_fee}}</text></view>
+        </view>
+        <view class='btn'>
+          <view class='btnList' wx:if='{{item.status!=-1}}'>
+            <button open-type='contact' class='btns'>
+              <image src='../../images/service.png'></image>
+            </button>
+          </view>
+          <view class='btnButton'>
+            <button data-list='{{item}}' bindtap='cancel'>取消订单</button>
+            <button bindtap='goStatus' data-list='{{item}}' style='background-color:#fff;'>查看状态</button>
+            <button class='fukuan' data-list='{{item}}' bindtap='goBuy'>付款</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true"  data-status='1' bindscrolltolower="onLower" >
+      <view class="orderDetails" wx:for="{{check.list}}" wx:key=" ">
+        <view class="orderListTitle">
+          <view class='orderLs'>
+            <text class="userName">{{item.name}}</text>
+            <text class="orderStatus">待审核</text>
+          </view>
+          <view class='media-number'>
+            <text>媒体编号：{{item.media_code}}</text>
+          </view>
+        </view>
+
+        <view class="orderListDetails" data-bookid='{{item.booking_id}}' bindtap='orderList'>
+          <view class="productImg">
+            <image src="{{item.pictures[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class='listFont'>
+              <text class="productTitle"> {{item.package}}/{{item.discount_package}}</text>
+              <text style='margin-left:50rpx;'> ￥{{item.media_fee}}</text>
+            </view>
+            <view style='font-size:24rpx;color:#888;margin-left:360rpx;margin-top:14rpx;'>×{{item.days}}</view>
+            <view class='list'>
+              <text class="productPrice">制作费</text>
+              <text class='productText'>+￥{{item.fabrication_fee}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="productCount">
+          <view>合计：<text class='zh-text'>￥</text><text class='num-text'>{{item.all_fee}}</text></view>
+        </view>
+        <view class='btn'>
+          <view class='btnList' wx:if='{{item.status!=-1}}'>
+            <button open-type='contact' class='btns'>
+              <image src='../../images/service.png'></image>
+            </button>
+          </view>
+          <view class='btnButton'>
+            <button data-list='{{item}}' bindtap='cancel'>取消订单</button>
+            <button bindtap='goStatus' data-list='{{item}}' style='background-color:#fff;'>查看状态</button>
+            <!-- <button class='fukuan'  data-list='{{item}}' bindtap='goBuy'>付款</button> -->
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

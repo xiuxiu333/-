@@ -1,0 +1,52 @@
+/* pages/buy/buy.wxss */
+page{
+  background: #f5f7fc;
+  height: 100%;
+}
+.buy-container{
+  margin-top: 6rpx;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 64rpx 0 130rpx;
+  position: relative;
+}
+.buy-container .title{
+  text-align: center;
+  font-size: 26rpx;
+  padding-bottom: 50rpx;
+}
+.buy-container .price{
+  text-align: center;
+  font-size: 58rpx;
+  padding-bottom: 58rpx;
+}
+.buy-container .receivables{
+  display: flex;
+  padding: 0 37rpx 30rpx 5rpx;
+  justify-content: space-between;
+  color: #7e7e86;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  border-bottom: 1px solid #e9e9e9;
+}
+.buy-container .receivables .company{
+  color: #000;
+}
+.buy-btn{
+  margin: 130rpx 90rpx 0;
+  background: #57be6a;
+  color: #fff;
+  font-size: 32rpx;
+ height: 90rpx;
+ line-height: 90rpx;
+}
+.notice{
+  position: absolute;
+  bottom: 51rpx;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  font-size: 22rpx;
+  color: #9f9d9d;
+}

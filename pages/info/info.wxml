@@ -1,0 +1,7 @@
+<!--pages/info/info.wxml-->
+<view class='info'>
+  <view class='item' wx:for='{{info}}' wx:key='{{index}}' data-index='{{index}}' data-title='{{item.name}}' bindtap='goHelp'>
+    <text>{{item.name}}</text>
+    <image src='{{item.img}}'></image>
+  </view>
+</view>

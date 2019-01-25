@@ -1,0 +1,80 @@
+/* pages/my/my.wxss */
+page{
+  height: 100%;
+}
+.my-container{
+  width: 100%;
+  background: #f5f7fc;
+  font-size: 32rpx;
+  height: 100%;
+}
+.my-info{
+  padding-left: 30rpx;
+  background: #fff;
+}
+.my-info>view{
+ display: flex;
+justify-content: space-between;
+align-items: center;
+padding-right: 47rpx;
+}
+.heade-img{
+height: 156rpx;
+border-bottom: 1px solid #e9e9e9;
+}
+.heade-img .header-imgs{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.nick-name{
+  padding: 37rpx 0;
+  border-bottom: 1px solid #e9e9e9;
+}
+.texts{
+  color: #7e7e86;
+  font-size: 28rpx;
+}
+.gender{
+  padding: 37rpx 0;
+   /* border-bottom: 1px solid #e9e9e9; */
+}
+.my-order{
+  padding: 37rpx 0;
+}
+.my-order image{
+  width: 15rpx;
+  height: 27rpx;
+}
+.contacts,.help{
+  margin-top: 20rpx;
+  padding: 37rpx 47rpx 37rpx 30rpx;
+  background: #fff;
+  display: flex;justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.contacts image,.help image{
+   width: 15rpx;
+  height: 27rpx;
+}
+.contacts .text{
+display: block;
+width: 100%;
+padding: 0;
+margin: 0;
+box-sizing:border-box;
+font-size:32rpx;
+text-align:left;
+text-decoration:none;
+line-height:36rpx;
+border-radius:0;
+overflow:hidden;
+color:#000000;
+background-color:#fff;
+border: 0;
+}
+.contacts .text::after {
+  border: 0;
+} 

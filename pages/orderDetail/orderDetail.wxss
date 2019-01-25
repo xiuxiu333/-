@@ -1,0 +1,413 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+page {
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 25rpx;
+}
+
+.pages {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.orderDetial {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.orderNav {
+  padding: 25rpx 30rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 20rpx;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+.orderImg {
+  width: 182rpx;
+  height: 182rpx;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.orderImg image {
+  width: 100%;
+  height: 100%;
+}
+
+.orderOneList {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orde {
+  padding-top: 18rpx;
+}
+
+.txt2 {
+  text-align: right;
+  color: #888;
+}
+
+.orderList {
+  font-size: 24rpx;
+  text-align: right;
+  line-height: 36rpx;
+  color: #888;
+}
+
+.orderDrets {
+  width: 478rpx;
+  padding: 25rpx 0 0 30rpx;
+}
+
+.orderOne {
+  display: flex;
+  line-height: 36rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #888;
+  padding-top: 5rpx;
+}
+
+.h1 {
+  /* font-size: 30rpx; */
+}
+
+.ccc {
+  color: #555;
+}
+
+/* 金额 */
+
+.orderMoney {
+  width: 100%;
+  height: 228rpx;
+  font-size: 26rpx;
+  color: #888;
+  line-height: 36rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.xian {
+  margin: 0 20rpx;
+  margin-top: 30rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+}
+
+.orderTwo {
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderTwolist {
+  padding: 0 30rpx;
+  margin-top: 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderThr {
+  width: 90%;
+  padding: 30rpx 30rpx 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.releaseDate {
+  width: 100%;
+  padding: 30rpx;
+  border-bottom: 5rpx solid #fafafa;
+  border-top: 5rpx solid #fafafa;
+}
+
+.date1 {
+  font-size: 24rpx;
+  color: #929292;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #1f1f1f;
+  margin-top: 18rpx;
+}
+
+.heji {
+  font-size: 26rpx;
+  color: #1f1f1f;
+}
+
+.orgin {
+  color: #ff6200;
+  font-size: 30rpx;
+}
+
+/* 上传照片 */
+
+.uploadPhone {
+  width: 100%;
+  border-bottom: 5rpx solid #e9e9e9;
+}
+
+.upload_phom {
+  width: 275rpx;
+  height: 243rpx;
+  line-height: 243rpx;
+  margin: 10rpx auto;
+  border: 1rpx solid #dcdcdc;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  color: #cbcbcb;
+}
+
+.upload_phom image {
+  width: 100%;
+  height: 100%;
+}
+
+.huise {
+  border-bottom: 1rpx solid #e9e9e9;
+  width: 95%;
+  margin-top: 35rpx;
+  margin-left: 20rpx;
+}
+
+.hint {
+  font-size: 25rpx;
+  color: #e82e03;
+  margin: 34rpx 0 34rpx 40rpx;
+}
+
+.orderHint {
+  line-height: 50rpx;
+}
+
+.buyerMessage {
+  width: 100%;
+  padding: 0 40rpx;
+  display: flex;
+  height: 92rpx;
+  border-bottom: 5rpx solid #e9e9e9;
+}
+
+.topline {
+  border-top: 5rpx solid #e9e9e9;
+}
+
+.buyerMessage text {
+  width: 20%;
+  line-height: 92rpx;
+  color: #1f1f1f;
+  font-size: 24rpx;
+}
+
+.buyerMessage input {
+  width: 70%;
+  vertical-align: top;
+  font-size: 24rpx;
+  height: 92rpx;
+}
+
+.hui {
+  width: 100%;
+  height: 10rpx;
+  background-color: rgb(233, 233, 233);
+}
+
+.information-container {
+  border-top: 30rpx solid #f3f3f3;
+}
+
+.information-container.pad150 {
+  margin-bottom: 150rpx;
+}
+
+.information-container .information {
+  border-bottom: 5rpx solid #e9e9e9;
+  padding: 30rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+
+.information-container .information image {
+  width: 15rpx;
+  height: 27rpx;
+}
+
+.notice {
+  border-bottom: 30rpx solid #f3f3f3;
+}
+
+.notice-text {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  font-size: 24rpx;
+  color: #1f1f1f;
+  justify-content: space-between;
+  line-height: 64rpx;
+  padding: 20rpx 40rpx;
+  align-items: center;
+  border-bottom: 5rpx solid #e9e9e9;
+}
+
+.orderDelist {
+  width: 100%;
+  margin-bottom: 170rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.orderBihao {
+  display: flex;
+  font-size: 24rpx;
+  color: #888;
+  border-bottom: 1rpx solid #e9e9e9;
+  flex-direction: column;
+  padding: 34rpx 0 34rpx 23rpx;
+}
+
+.orderClass {
+  margin-top: 15rpx;
+}
+
+/*  */
+
+.orderTishi {
+  padding: 34rpx 0;
+  border-bottom: 1rpx solid #e9e9e9;
+  font-size: 24rpx;
+  color: #888;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+.orderG {
+  margin-left: 23rpx;
+  padding-top: 15rpx;
+}
+
+/*  */
+
+.orderHeji {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+  /* margin:0 20rpx; */
+  width: 100%;
+  padding: 34rpx 20rpx;
+}
+
+.hejiList {
+  font-size: 30rpx;
+  color: #151a1e;
+  white-space: nowrap;
+}
+
+.orderHeji button {
+  padding: 25rpx 50rpx;
+  background-color: #f25856;
+  border-radius: 10rpx;
+  line-height: 36rpx;
+  color: #fff;
+  margin-left: 50rpx;
+  font-size: 32rpx;
+  white-space: nowrap;
+  margin-right: 10rpx;
+}
+
+.showImg {
+  border-bottom: 5rpx solid #e9e9e9;
+  padding: 20rpx 50rpx;
+  height: 350rpx;
+}
+
+.showImg image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.no-showimg {
+  font-size: 24rpx;
+  color: #1f1f1f;
+}
+
+.notice-btn.change-container {
+  width: 100rpx;
+  border-radius: 10rpx;
+  padding-left: 35rpx;
+  /* text-align: center; */
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #dcdcdc;
+}
+
+.values {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.change-num {
+  width: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 65rpx;
+  padding: 20rx 0;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.change-num text {
+  display: block;
+  padding: 0 40rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  background: #fff;
+  opacity: 0.9;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.2);
+}
+
+.notice-box {
+  position: relative;
+}
+
+.move-icon, .change-icon {
+  position: absolute;
+  right: -50rpx;
+  top: 8rpx;
+}
+
+.down-icon {
+  position: absolute;
+  right: 10rpx;
+  top: 43%;
+  display: inline-block;
+  border: 5px solid #7f7f7f;
+  border-top-color: #7f7f7f;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}

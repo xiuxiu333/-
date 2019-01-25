@@ -1,0 +1,19 @@
+/* pages/help/help.wxss */
+page{
+  padding: 0;
+  margin: 0;
+}
+.help{
+  width: 100%;
+}
+.help .item{
+  display: block;
+ font-size: 26rpx;
+ line-height: 40rpx;
+ padding: 0 30rpx 30rpx;
+}
+.right{
+   font-size: 28rpx;
+ padding: 0 30rpx 30rpx 0;
+  float: right;
+}

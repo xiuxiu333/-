@@ -1,0 +1,11 @@
+<!--pages/buy/buy.wxml-->
+<view class='buy-container'>
+  <view class='title'>{{list.mediaName}}</view>
+  <view class='price'>￥{{list.amount}}</view>
+  <view class='receivables'>
+    <text>收款方</text>
+    <text class='company'>北京威媒科技有限公司</text>
+  </view>
+  <button class='buy-btn' bindtap='goBuy'>立即支付</button>
+  <view class='notice'>支付安全由中国人民财产保险股份有限公司公司承包</view>
+</view>

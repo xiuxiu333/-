@@ -1,0 +1,71 @@
+<view class='pages'>
+  <view class='index_location'>
+    <!-- 红色背景图 -->
+    <view class="box">
+      <!-- <image class='images' src='../../images/Red.png'></image> -->
+      <view class="home_top"></view>
+    </view>
+    <view>
+      <view class="phone_one" bindtap="clickPerson">
+        <view class="phone_personal">{{firstPerson}}</view>
+        <!-- 定位地图功能 -->
+        <!-- <input class='phone_personal' placeholder-class='plhStyle' type='number' maxlength='50' placeholder='' bindinput="bindKeyInput" value='{{city}}' disabled></input> -->
+        <i></i>
+      </view>
+      <!-- 下拉框 -->
+      <view class="person_box">
+        <view class="phone_select" hidden="{{selectPerson}}">
+          <view class="select_one" bindtap="mySelect" data-value='{{item.value}}' data-label="{{item.label}}" wx:for='{{labelList}}' wx:key>{{item.label}}</view>
+        </view>
+      </view>
+      <!-- 搜索框 -->
+      <image class="searchcion" src='../../images/search.png'></image>
+      <input class='inputList' placeholder='国贸' placeholder-class="phcolor" placeholder-style="color:#7d7d7d;font-size:26rpx;" bindinput='listenerSearchInput' bindconfirm='toSearch' bindtap='goMedais'></input>
+      <view class='contact'>
+        <button open-type='contact' class='btns'><image src='/images/kefu-3.png'></image></button>
+      </view>
+    </view>
+    <!-- 轮播图 -->
+    <view class="swiper-container ">
+      <swiper indicator-dots="{{indicatorDots}}" indicator-color='rgba(0, 0, 0, .5)' indicator-active-color="#ffffff" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange"
+        class="swiper loginWrap ">
+        <block wx:for="{{imgUrls}}" wx:key="unique">
+          <swiper-item data-index='{{index}}' bindtap='goSpecil'>
+            <image src="{{item}}" bindtap="swipclick" class='imageList' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 小图标 -->
+    <view class='index_icon'>
+    <block wx:for='{{notices}}'  wx:key='{{item.id}}'>
+      <view class='index_iconStreet' data-id='{{item.id}}' bindtap='goList'>
+        <image src='{{item.image}}'></image>
+        <text>{{item.title}}</text>
+      </view>
+      </block>
+      <!-- <view class='index_iconStreet' bindtap='allMedia'>
+        <image src='../../images/media.png'></image>
+        <text>全部媒体</text>
+      </view> -->
+    </view>
+  </view>
+  <!-- 精选媒体 -->
+  <view class='media_index'>
+    <view class='title_media' wx:for='{{media1}}' wx:key>
+      <view class='oindorme'>{{item.tel}}</view>
+      <view class='select'>
+        <text>{{item.selected}}</text>
+      </view>
+    </view>
+    <view class='info' wx:for='{{infoDate}}' wx:key bindtap='particulars' data-idx="{{item.media_id}}">
+      <image mode='aspectFill' src='{{item.pictures[0]}}' class='imageImg'></image>
+      <view class='highly_reco'>
+        <image src='../../images/location.png'></image>
+        <text class='media'>{{item.name}}</text>
+        <text class='media'>|</text>
+        <text class='recommend'>{{item.flag}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,97 @@
+<!--pages/media/media.wxml-->
+<view class='media'>
+  <view class='search'>
+    <image class='search-btn' src='/images/search.png'></image>
+    <input class='search-input' value='{{keyword}}' placeholder='国贸' bindinput='changeKeyword'></input>
+    <view class='date-box'>
+      <picker class='date-btn' mode="date" start="{{startDate}}" end="{{startDateEnd}}" bindchange="startChange">
+        <view class="picker">
+          <block wx:if='{{isShowStart}}'>开始日期-</block>
+          <block wx:else>{{startTime}}-</block>
+        </view>
+      </picker>
+      <picker class='date-btn2' mode="date" start="{{startDate}}" end="{{startDateEnd}}" bindchange="endChange">
+        <view class="picker">
+          <block wx:if='{{isEndShow}}'>结束日期</block>
+          <block wx:else>{{endTime}}</block>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='filter'>
+    <view class='item hot'>
+      <view class='{{selectIndex===0?"select active":"select"}}' bindtap='showHot'>
+        <text>{{hot}}</text>
+        <i class='select-icon'></i>
+        <!-- <image src='/images/start.png'></image> -->
+      </view>
+      <view class='option-box' wx:if="{{hotKeyShow}}">
+        <block wx:for="{{hotKey}}" wx:key='{{index}}'>
+          <text data-id='{{index}}' bindtap='clickHot'>{{item}}</text>
+        </block>
+      </view>
+    </view>
+    <view class='item country'>
+      <view class='{{selectIndex===1?"select active":"select"}}' bindtap='countryShow'>
+        <text>{{countryKey}}</text>
+         <i class='select-icon'></i>
+        <!-- <image src='/images/start.png'></image> -->
+      </view>
+      <view class='option-box' wx:if='{{countryShow}}'>
+        <block wx:for='{{country}}' wx:key='{{item.value}}'>
+          <text bindtap='countryClick' data-name='{{item.label}}' data-id='{{item.value}}'>{{item.label}}</text>
+        </block>
+      </view>
+    </view>
+    <view class='item price'>
+      <view class='{{selectIndex===2?"select active":"select"}}' bindtap='priceShow'>
+        <text>{{priceKey}}</text>
+         <i class='select-icon'></i>
+        <!-- <image src='/images/start.png'></image> -->
+      </view>
+      <view class='option-box' wx:if='{{priceShow}}'>
+        <block wx:for='{{price}}' wx:key='{{item.flag}}'>
+          <text data-id='{{item.flag}}' data-name='{{item.price}}' bindtap='priceClick'>{{item.price}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  
+  <view class='main'>
+    <block wx:for='{{mediaData}}' wx:key='{{item.media_id}}'>
+      <view class='item' data-id='{{item.media_id}}' bindtap='goDetial'>
+        <view class='img'>
+          <image src='{{item.pictures[0]}}'></image>
+        </view>
+        <view class='info'>
+          <text class='title'>{{item.name}}</text>
+          <view class='address'>
+            <text>{{item.cityName}}</text>
+            <text class='line'>|</text>
+            <text>{{item.stationName}}</text>
+          </view>
+          <view class='price'>￥{{item.media_fee}}/天</view>
+          <view class='score'>
+            <view class='start'>
+              <image src='/images/start1.png'></image>
+              <view class='select' style='width:{{item.level/10*153}}rpx'>
+                <image src='/images/start2.png'></image>
+              </view>
+            </view>
+            <text class='num start-num'>{{item.level}}星</text>
+          </view>
+          <view class='score'>
+            <view class='grade'>
+              <image src='/images/hg1.png'></image>
+              <view class='select' style='width:{{item.heat/10*153}}rpx'>
+                <image src='/images/hg2.png'></image>
+              </view>
+            </view>
+            <text class='num grade-num'>{{item.heat}}钻</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

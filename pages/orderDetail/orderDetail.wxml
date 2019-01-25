@@ -1,0 +1,147 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class='pages'>
+  <view class="orderNav">
+    <!-- 图片 -->
+    <view class='orderImg'>
+      <image src='{{list.pictures[0]}}'></image>
+    </view>
+    <!-- 文字 -->
+    <view class='orderDrets'>
+      <view class='orderOneList'>
+        <text>{{list.name}}</text>
+        <!-- name名字 -->
+        <text class='txt2'>￥{{list.media_fee}}</text>
+        <!-- 钱 -->
+      </view>
+      <view class='orderList'>X{{list.days}}</view>
+      <!-- 天数 -->
+      <view class='orderOne ccc'>
+        <text>{{list.package}} / {{list.discount_package}}</text>
+      </view>
+      <view class='ccc orde'>
+        <text>媒体编号{{list.media_code}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 金额 -->
+  <view class='orderMoney '>
+    <view class='orderTwo'>
+      <text>金额</text>
+      <text>￥{{list.total}}</text>
+    </view>
+    <view class='orderTwolist'>
+      <text>制作费</text>
+      <text>+￥{{list.fabrication_fee}}</text>
+    </view>
+    <view class='xian'></view>
+
+    <view class='orderThr'>
+      <text class='heji'>合计</text>
+      <text class='orgin'>￥{{list.all_fee}}</text>
+    </view>
+
+  </view>
+
+  <view class='releaseDate'>
+    <view class='date1'>发布日期</view>
+    <view class='date'>{{list.start_date}}（{{list.startWeek}}) - {{list.end_date}}（{{list.endWeek}}） 共
+      <text style='color:#e82e03;'> {{list.days}}</text> 天</view>
+  </view>
+
+  <!-- 上传照片 -->
+  <view class='uploadPhone' wx:for='{{orderUpdate}}' wx:key>
+
+    <!-- 上传照片 -->
+    <view class='uploadPhone' wx:if='{{!isShowDetail}}'>
+      <view class='upload_phom' bindtap='selectImg' wx:if='{{thumbnail}}'>
+        <text style='font-size:100rpx;'>+</text>
+      </view>
+      <view class='upload_phom' bindtap='selectImg' wx:if='{{!thumbnail}}'>
+        <image src='{{pics}}'></image>
+      </view>
+      <text style='font-size:24rpx;padding-top:35rpx;color:#929292;margin-left:247rpx;'>{{item.zhichi}}</text>
+      <view class='huise'></view>
+      <view class='hint'>
+        <view class='orderHint'>{{item.tishi}}</view>
+        <view class='orderHint'>{{item.chicun}}</view>
+      </view>
+    </view>
+    <view class='showImg' wx:if='{{isShowDetail}}'>
+      <image src='{{list.bookingPicture}}' wx:if='{{list.showImg}}'></image>
+      <text wx:if='{{!list.showImg}}' class='no-showimg'>暂无图片</text>
+    </view>
+
+    <view class='notice-text'>
+      <view  class='notice-box'>
+        换画次数<view class='change-icon' bindtap='changeNumNote'><icon type="info" size="16" color="#888888" /></view>
+      </view>
+      <view class='notice-btn change-container'>
+      <view class='values' bindtap='changeNum'>{{change_num}}<text class='down-icon'></text></view>
+       <view class='change-num' wx:if='{{showChange}}'>
+       <text data-value='0' bindtap='changeSelect'>0</text>
+       <text data-value='1' bindtap='changeSelect'>1</text>
+       <text data-value='2' bindtap='changeSelect'>2</text>
+       <text data-value='3' bindtap='changeSelect'>3</text>
+       </view>
+      </view>
+    </view>
+    <view class='notice}'>
+      <view class='notice-text'>
+        <view class='notice-box'>
+          接收移位<view class='move-icon' bindtap='moveNote'><icon type="info" size="16" color="#888888" /></view>
+        </view>
+        <view class='notice-btn'>
+          <switch type='switch' checked='{{move}}' disabled='{{isShowDetail}}' color='#74d572' bindchange='switchMove'></switch>
+        </view>
+      </view>
+      <view class='notice-text'>
+        <view  class='notice-box'>
+          上刊提醒消息通知
+        </view>
+        <view class='notice-btn'>
+          <switch type='switch' checked='{{warning}}' disabled='{{isShowDetail}}' color='#74d572' bindchange='switchChange'></switch>
+        </view>
+      </view>
+      <view class='notice-text'>
+        <view  class='notice-box'>
+          开具发票
+        </view>
+        <view class='notice-btn'>
+          <switch type='switch' checked='{{invoice}}' disabled='{{isShowDetail}}' color='#74d572' bindchange='switchInvoice'></switch>
+        </view>
+      </view>
+    </view>
+
+    <view class='buyerMessage topline'>
+      <text>联系人邮箱：</text>
+      <input placeholder="请输入邮箱，接受确认函等信息" name="email" disabled='{{isShowDetail}}' bindinput='emaiChange' value='{{email}}' />
+    </view>
+    <!-- 买家留言 -->
+    <view class='buyerMessage'>
+      <text>买家留言：</text>
+      <input placeholder="点击给商家留言" name="textarea" disabled='{{isShowDetail}}' bindinput='textareaChange' value='{{message}}' />
+      <!-- <input placeholder='点击给商家留言'></input> -->
+    </view>
+    <view class='{{isShowDetail?"information-container":"information-container pad150"}}'>
+    <block wx:for='{{helpInfo}}' wx:key='{{index}}'>
+      <view class='{{index==0?"information topline":"information"}}' data-index='{{index}}' data-title='{{item.name}}' bindtap='goHelp'>
+        <text>{{item.name}}</text>
+        <image src='{{item.img}}'></image>
+      </view>
+      </block>
+    </view>
+    <block wx:if='{{isShowDetail}}'>
+      <view class='orderDelist' wx:for='{{orderBian}}' wx:key>
+        <view class='orderBihao'>
+          <text class='orderClass'>{{item.bianhao}}</text>
+          <text class='orderClass'>{{item.xiadan}}</text>
+          <text class='orderClass'>{{item.zhifu}}</text>
+        </view>
+      </view>
+    </block>
+    <view class='orderHeji' wx:if='{{!isShowDetail}}'>
+      <text class='hejiList'>合计：<text style='color:#ff6200;font-size:32rpx;'>￥{{list.all_fee}}</text> </text>
+      <button bindtap='placeOrder'>提交订单</button>
+    </view>
+  </view>
+</view>

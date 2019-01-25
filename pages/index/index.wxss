@@ -1,0 +1,431 @@
+/**index.wxss**/
+page{
+   width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.pages{
+  width: 100%;
+  height: 100%;
+  /* overflow-x: hidden; */
+}
+.index_location {
+  width: 100%;
+  height: 684rpx;
+  position: relative;
+  top: 0;
+   overflow-x: hidden;
+}
+
+.box {
+  width: 100%;
+  height: 363rpx;
+}
+
+.box .images {
+  width: 100%;
+  height: 363rpx;
+  z-index: -1;
+  content: '';
+}
+
+/* 搜索框 */
+
+.inputList {
+  width: 360rpx;
+  height: 77rpx;
+  background-color: #fff;
+  box-shadow: 1rpx 2rpx 4rpx 1rpx rgba(115, 115, 115, 0.08);
+  border-radius: 5rpx;
+  border: solid 0rpx #ededed;
+  position: absolute;
+  left: 180rpx;
+  padding: 0 10rpx 0 80rpx;
+  color: #000;
+  top: 20rpx;
+}
+.contact{
+  position: absolute;
+  right: 30rpx;
+  top: 37rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.contact .btns{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  line-height: 0;
+  padding: 0;
+}
+.contact .btns::after{
+  border: 0;
+}
+.contact .btns image{
+  width: 100%;
+  height: 100%;
+}
+/* 搜索框里的字体颜色 */
+
+.phcolor {
+  color: #fff;
+}
+
+/* 下拉框 */
+
+.phone_personal {
+  width: 36%;
+  color: #fff;
+  /* line-height: 130rpx; */
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.phone_one {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 30%;
+  height: 100rpx;
+  top: 0;
+  left: 40rpx;
+}
+
+.person_box {
+  position: absolute;
+  width: 100%;
+}
+
+.phone_select {
+  /* 小程序中z-index和absolute需要同时存在，元素才能脱离文档。 */
+  z-index: 100;
+  position: absolute;
+  top: -250rpx;
+  left: 30rpx;
+  background-color: #fff;
+  color: #000;
+  opacity: 0.9;
+}
+
+.select_one {
+  text-align: center;
+  /* 脱离文档后元素width不能再用百分比。 */
+  width: 150rpx;
+  height: 70rpx;
+  color: #000;
+  font-size: 30rpx;
+  line-height:70rpx;
+}
+
+.select_one:active {
+  background-color: orange;
+}
+
+.personal_image {
+  z-index: 100;
+  position: absolute;
+  right: 2.5%;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+/* 180°旋转图片。 */
+
+.rotateRight {
+  transform: rotate(180deg);
+}
+
+/* 外框 */
+
+.index_Home {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 247, 252);
+}
+
+i {
+  border: 5px solid #fff;
+  border-top-color: #fff;
+  margin-top: 30rpx;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.index_navList {
+  width: 100%;
+  height: 700rpx;
+  background: #fff;
+  position: relative;
+}
+
+.home_top {
+  position: absolute;
+  width: 100%;
+  height: 355rpx;
+}
+
+.info {
+  height: 400rpx;
+  margin-top: 30rpx;
+  border-bottom: 20rpx solid rgb(245, 247, 252);
+}
+
+.home_top:after {
+  width: 140%;
+  height: 355rpx;
+  position: absolute;
+  left: -20%;
+  top: 0;
+  z-index: -1;
+  content: '';
+  border-radius: 0 0 30% 30%;
+  background: rgb(203, 34, 40);
+}
+
+.index_location .index_text1 {
+  width: 20%;
+  line-height: 100rpx;
+}
+
+/* 搜索小图标 */
+
+.index_location .searchcion {
+  position: absolute;
+  left: 200rpx;
+  z-index: 1000;
+  top: 45rpx;
+  width: 29rpx;
+  height: 29rpx;
+}
+
+.index_location  .index_text2 {
+  width: 70%;
+  line-height: 100rpx;
+}
+
+/* 轮播图 */
+
+.loginWrap {
+  width: 690rpx;
+  height: 350rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100rpx;
+  margin: auto;
+  box-shadow: 0px 20px 10px -15px #888;
+}
+
+swiper-item image {
+  width: 690rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
+}
+
+.swiper-container .swiper {
+  height: 350rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+
+/* 小图标 */
+
+.index_icon {
+  width: 100%;
+  height: 145rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 520rpx;
+}
+
+.index_iconStreet {
+  width: 661rpx;
+  height: 145rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.index_iconStreet image {
+  width: 83rpx;
+  height: 82rpx;
+  border-radius: 20rpx;
+}
+
+.index_iconStreet text {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+}
+
+/* 精选媒体 */
+
+.media_index {
+  overflow-x: hidden;
+  width: 100%;
+  background: #fff;
+  border-top: 20rpx solid rgb(245, 247, 252);
+}
+
+.oindorme {
+  font-size: 32rpx;
+  padding: 0 25rpx;
+  border-left: 7rpx solid #be1c22;
+  color: #333;
+}
+
+.textTex {
+  margin-left: 20rpx;
+}
+
+.title_media {
+  padding-top: 30rpx;
+}
+
+.red {
+  border: 7rpx solid #f26d02;
+  height: 35rpx;
+  line-height: 35rpx;
+}
+
+.select {
+  width: 100%;
+  font-size: 20rpx;
+  padding-left: 30rpx;
+  color: #999;
+  margin-top: 18rpx;
+}
+
+.imageImg {
+  margin-left: 47rpx;
+  height: 300rpx;
+  width: 656rpx;
+  border-radius: 15rpx;
+  vertical-align: top;
+}
+
+.highly_reco {
+  padding-left: 50rpx;
+  padding-top: 20rpx;
+}
+
+.highly_reco image {
+  width: 15rpx;
+  height: 25rpx;
+}
+
+.media {
+  width: 255rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.recommend {
+  margin-left: 25rpx;
+  border: 1.7rpx solid #f26d02;
+  color: #f26d02;
+  font-size: 20rpx;
+  border-radius: 2rpx;
+  width: 95rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 5rpx 7rpx;
+}
+
+/* 精选媒体图片 */
+
+.media_potios {
+  width: 100%;
+  height: 100%;
+}
+
+.media_Selection {
+  background-color: #fff;
+}
+
+.media_selected {
+  font-size: 20rpx;
+  color: #ccc;
+  padding: 0 40rpx;
+}
+
+.medis_tupian {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.media_picture {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media_picture image {
+  width: 656rpx;
+  height: 300rpx;
+  border-radius: 20rpx;
+}
+
+.media_gallery {
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  padding: 0 40rpx;
+  font-size: 25rpx;
+}
+
+.wire {
+  color: #ccc;
+  padding: 0 10rpx;
+}
+
+.highly_recommend {
+  border: 1rpx solid orange;
+  border-radius: 6rpx;
+  color: orange;
+  margin: 10rpx 20rpx;
+}
+
+.Channel {
+  width: 256rpx;
+  height: 27rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 1rpx;
+  color: #333;
+  border-right: 1rpx solid #ccc;
+}
+
+/*  */
+
+.jinzhang {
+  width: 100%;
+  height: 415rpx;
+  border-radius: 10rpx;
+}
+
+.img_Jinz {
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+}
+
+
+
+
+

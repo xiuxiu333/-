@@ -1,0 +1,13 @@
+<!--pages/special/special.wxml-->
+<view class='special'>
+  <block wx:for='{{info}}' wx:key='{{index}}' wx:if='{{current==0}}'>
+    <view class='item'>
+      <image class='{{index==info.length-1?"last":""}}' src='{{item}}'></image>
+    </view>
+  </block>
+    <block wx:for='{{infos}}' wx:key='{{index}}' wx:if='{{current==1}}'>
+    <view class='item'>
+      <image class='{{index==infos.length-1?"lasttwo":""}}' src='{{item}}'></image>
+    </view>
+  </block>
+</view>
